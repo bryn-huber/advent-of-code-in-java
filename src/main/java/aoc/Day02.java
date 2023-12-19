@@ -15,10 +15,8 @@ public class Day02 {
 
     LOGGER.log(INFO, "Starting Day02 Computation");
 
-    List<Game> games = readLines("src/main/resources/day02_data.txt").stream()
-        .map(Game::fromString).toList();
-    int sumIds = games.stream()
-        .filter(g -> g.maxRed() <= 12 && g.maxGreen() <= 13 && g.maxBlue() <= 14)
+    List<Game> games = readLines("src/main/resources/day02_data.txt").stream().map(Game::fromString).toList();
+    int sumIds = games.stream().filter(g -> g.maxRed() <= 12 && g.maxGreen() <= 13 && g.maxBlue() <= 14)
         .mapToInt(Game::id).sum();
     LOGGER.log(INFO, "SumIds = " + sumIds);
     int sumPows = games.stream().mapToInt(g -> g.maxRed() * g.maxBlue() * g.maxGreen()).sum();
@@ -26,7 +24,6 @@ public class Day02 {
   }
 
   private record Round(int red, int green, int blue) {
-
     static Round fromString(String str) {
       int r = 0;
       int g = 0;
@@ -47,7 +44,6 @@ public class Day02 {
   }
 
   private record Game(int id, List<Round> rounds) {
-
     int maxRed() {
       return maxOfRounds(Round::red);
     }
