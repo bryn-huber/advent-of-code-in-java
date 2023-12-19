@@ -7,22 +7,22 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
-public class Day1 {
+public class Day01 {
 
-  private static final System.Logger LOGGER = System.getLogger("Day1.DefaultLogger");
+  private static final System.Logger LOGGER = System.getLogger("Day01.DefaultLogger");
 
   private static final Map<String, Integer> DIGIT_NAMES = Map.of("one", 1, "two", 2, "three", 3,
       "four", 4, "five", 5, "six", 6, "seven", 7, "eight", 8, "nine", 9);
 
   public static void main(String[] args) {
 
-    LOGGER.log(INFO, "Starting Day1 Computation");
+    LOGGER.log(INFO, "Starting Day01 Computation");
 
-    var lines = Utils.readLines("src/main/resources/day1_data.txt");
-    var sum1 = lines.stream().map(Day1::keepDigits).mapToInt(l -> l.getFirst() * 10 + l.getLast())
+    var lines = Utils.readLines("src/main/resources/day01_data.txt");
+    var sum1 = lines.stream().map(Day01::keepDigits).mapToInt(l -> l.getFirst() * 10 + l.getLast())
         .sum();
     LOGGER.log(INFO, "Sum1 = " + sum1);
-    var sum2 = lines.stream().map(Day1::keepAllDigits)
+    var sum2 = lines.stream().map(Day01::keepAllDigits)
         .mapToInt(l -> l.getFirst() * 10 + l.getLast()).sum();
     LOGGER.log(INFO, "Sum2 = " + sum2);
   }
