@@ -7,15 +7,15 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.function.ToIntFunction;
 
-public class DayThree {
+public class Day3 {
 
-  private static final System.Logger LOGGER = System.getLogger("DayThree.DefaultLogger");
+  private static final System.Logger LOGGER = System.getLogger("Day3.DefaultLogger");
 
   public static void main(String[] args) {
 
-    LOGGER.log(INFO, "Starting DayThree Computation");
+    LOGGER.log(INFO, "Starting Day3 Computation");
 
-    List<Game> games = readLines("src/main/resources/day_three_data.txt").stream()
+    List<Game> games = readLines("src/main/resources/day3_data.txt").stream()
         .map(Game::fromString).toList();
     int sumIds = games.stream()
         .filter(g -> g.maxRed() <= 12 && g.maxGreen() <= 13 && g.maxBlue() <= 14)
