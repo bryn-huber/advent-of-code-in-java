@@ -1,6 +1,9 @@
 package aoc;
 
+import static aoc.Utils.readInput;
 import static java.lang.System.Logger.Level.INFO;
+
+import java.util.Arrays;
 
 public class Day05 {
 
@@ -9,8 +12,12 @@ public class Day05 {
   public static void main(String[] args) {
     LOGGER.log(INFO, "Starting Day05 Computation");
 
-    //var lines = readInput("src/main/resources/day05_data.txt").lines().toList();
+    var lines = readInput("src/main/resources/day05_data.txt");
 
-    LOGGER.log(INFO, "CODE STILL TO DO!");
+
+    var seeds = Arrays.stream(lines.split("\n")).toList().get(0);
+
+    LOGGER.log(INFO, Arrays.stream(seeds.split(" ")).toList().getFirst());
+
   }
 }
